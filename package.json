@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://reinaldo-mlhs.github.io/SynthesisLunatic",
+  "homepage": "https://reinaldo-mlhs.github.io/SynthesisLunatic",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
