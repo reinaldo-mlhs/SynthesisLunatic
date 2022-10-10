@@ -194,6 +194,12 @@ function App() {
     }
   }
 
+  const handleReset = () => {
+    setAllItems(containers);
+    setScore(0);
+    setMergeHistory([]);
+  }
+
   return (
     <div className="page">
       <div className="title-description">
@@ -212,6 +218,10 @@ function App() {
           <div className="merging-droppables">
 
             <Score score={score} />
+
+            <button id="reset" onClick={handleReset}>
+              reset
+            </button>
 
             <Inventory id="mergingA" items={allItems["mergingA"]}>
               {allItems["mergingA"].map((item, index) => (
