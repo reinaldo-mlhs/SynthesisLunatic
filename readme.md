@@ -8,7 +8,7 @@ Live demo at [GitHub Page](https://reinaldo-mlhs.github.io/SynthesisLunatic/).
 
 ### To do:
 
-- mobile friendly
+- mobile friendly - INQUEUE
 - reset button - DONE
-- achievements
-- more combinations
+- achievements - INPROGRESS
+- more combinations - INPROGRESS

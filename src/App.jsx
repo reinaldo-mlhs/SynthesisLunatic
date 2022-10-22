@@ -10,6 +10,7 @@ import "./App.css";
 import { findMergeCombination } from './merger';
 import Score from './components/Score';
 import MergeHistory from './components/MergeHistory';
+import Goals from './components/Goals';
 
 const cardsA = ["water", "fire", "air", "earth"];
 
@@ -280,21 +281,7 @@ function App() {
               ))}
             </Inventory>
 
-            <div className="goal">
-              <div>Goals</div>
-              <ul>
-                {goals.map(goal => (
-                  <li>
-                    <span>{goal["goal"]}</span>&nbsp;
-                    {goal["completed"] ?
-                      <span>&#10003;</span>
-                      :
-                      <span>&#10007;</span>
-                    }
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <Goals goals={goals} />
           </div>
         </div>
 
