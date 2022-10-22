@@ -26,6 +26,13 @@
     position: relative;
 }
 
+.goal {
+    position: absolute;
+    top: 110px;
+    right: -185px;
+    margin: 0px 0px 20px 0px;
+}
+
 #merge-history {
     position: absolute;
     top: 0px;

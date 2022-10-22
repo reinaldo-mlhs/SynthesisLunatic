@@ -5,42 +5,48 @@
 // dust, lava, steam, sand, stone, glass, mud
 // time, metal, life
 const combinations = [
-    {recipe: ["air", "earth"], result: ["dust"]},
-    {recipe: ["air", "water"], result: ["cloud"]},
+    {recipe: ["air", "steam"], result: ["cloud"]},
     {recipe: ["air", "fire"], result: ["wind"]},
+    {recipe: ["air", "lava"], result: ["stone"]},
+    {recipe: ["air", "lizard"], result: ["bird"]},
+
+    {recipe: ["water", "fire"], result: ["steam"]},
+    {recipe: ["water", "lava"], result: ["steam", "stone"]},
+    {recipe: ["water", "stone"], result: ["sand"]},
+    {recipe: ["water", "life"], result: ["lizard", "mammal", "fish", "plant"]},
+
     {recipe: ["earth", "water"], result: ["swamp"]},
     {recipe: ["earth", "fire"], result: ["lava"]},
-    {recipe: ["water", "fire"], result: ["steam"]},
-    {recipe: ["water", "lava"], result: ["steam"]},
+
+    {recipe: ["fire", "sand"], result: ["glass"]},
+    {recipe: ["fire", "stone"], result: ["metal"]},
+    {recipe: ["fire", "lizard"], result: ["dragon"]},
+    
+    
+    {recipe: ["wind", "cloud"], result: ["lighting"]},
     {recipe: ["stone", "wind"], result: ["sand"]},
-    {recipe: ["sand", "fire"], result: ["glass"]},
-    {recipe: ["lava", "air"], result: ["stone"]},
-    {recipe: ["stone", "water"], result: ["sand"]},
-    {recipe: ["dust", "fire"], result: ["ash"]},
-    {recipe: ["cloud", "fire"], result: ["lighting"]},
     {recipe: ["lighting", "metal"], result: ["electricity"]},
-
     {recipe: ["sand", "glass"], result: ["time"]},
-    {recipe: ["stone", "fire"], result: ["metal"]},
+    {recipe: ["sand", "electricity"], result: ["computer"]},
     {recipe: ["swamp", "time"], result: ["life"]},
-    {recipe: ["fire", "electricity"], result: ["plasma"]},
-
-    {recipe: ["space", "earth"], result: ["gravity"]},
-    {recipe: ["earth", "gravity"], result: ["star", "planet"]},
-    {recipe: ["space", "earth"], result: ["gravity"]},
-
+    {recipe: ["swamp", "lighting"], result: ["life"]},
     {recipe: ["life", "stone"], result: ["golemn"]},
-    {recipe: ["life", "water"], result: ["lizard", "mammal", "fish", "plant"]},
     {recipe: ["mammal", "time"], result: ["human"]},
     {recipe: ["time", "plant"], result: ["tree"]},
-    {recipe: ["lizard", "air"], result: ["bird"]},
-    {recipe: ["lizard", "fire"], result: ["dragon"]},
     {recipe: ["human", "time"], result: ["death"]},
     {recipe: ["human", "stone"], result: ["tools"]},
     {recipe: ["tools", "tree"], result: ["wood"]},
     {recipe: ["tools", "wood"], result: ["paper"]},
     {recipe: ["paper", "human"], result: ["knowledge"]},
-    {recipe: ["knowledge", "human"], result: ["law", "religion"]},
+    {recipe: ["knowledge", "human"], result: ["philosophy"]},
+    {recipe: ["computer", "human"], result: ["programming"]},
+    {recipe: ["golemn", "programming"], result: ["robot"]},
+    {recipe: ["human", "tools"], result: ["weapons"]},
+    {recipe: ["human", "weapons"], result: ["war", "death"]},
+    {recipe: ["robot", "weapons"], result: ["mecha"]},
+    {recipe: ["death", "electricity"], result: ["zombie"]},
+    {recipe: ["death", "life"], result: ["cycle"]},
+
 ]
 
 export function findMergeCombination(mergingA, mergingB) {

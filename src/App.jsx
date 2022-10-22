@@ -24,6 +24,15 @@ function App() {
   const [draggingItem, setDraggingItem] = useState(null);
   const [allItems, setAllItems] = useState(containers);
 
+  const [goals, setGoals] = useState([
+    { "goal": "life", "completed": false },
+    { "goal": "dragon", "completed": false },
+    { "goal": "human", "completed": false },
+    { "goal": "philosophy", "completed": false },
+    { "goal": "computer", "completed": false },
+    { "goal": "mecha", "completed": false }
+  ]);
+
   const [mergeHistory, setMergeHistory] = useState([]);
   const [score, setScore] = useState(0);
 
@@ -182,6 +191,17 @@ function App() {
             setRecentRecipes([]);
             setRecentResults([]);
           }, 500);
+
+          goals.forEach((goal, index) => {
+            if (result.includes(goal["goal"])) {
+              setGoals(prev => {
+                prev[index] = {...prev[index], "completed": true}
+                return [...prev];
+              });
+              setScore(prev => prev + 100);
+            }
+          })
+        
         }
         else {
           setMergeFailures([mergingA, mergingB]);
@@ -198,14 +218,24 @@ function App() {
     setAllItems(containers);
     setScore(0);
     setMergeHistory([]);
+    setGoals([
+      { "goal": "life", "completed": false },
+      { "goal": "dragon", "completed": false },
+      { "goal": "human", "completed": false },
+      { "goal": "philosophy", "completed": false },
+      { "goal": "computer", "completed": false },
+      { "goal": "mecha", "completed": false }
+    ]);
   }
 
   return (
     <div className="page">
       <div className="title-description">
-        <h1 style={{textAlign: "center"}}>Synthesis Lunatic</h1>
+        <h1 style={{ textAlign: "center" }}>Synthesis Lunatic</h1>
         <div>Combine elemets to create new elements</div>
       </div>
+
+
 
       <DndContext
         sensors={sensors}
@@ -243,11 +273,29 @@ function App() {
 
           </div>
 
-          <Inventory id="inventory" items={allItems["inventory"]}>
-            {allItems["inventory"].map((item, index) => (
-              <Card id={item} key={item} name={item} extraClass={recentRecipes.includes(item) ? " recent-recipe" : recentResults.includes(item) ? " recent-result" : ""} />
-            ))}
-          </Inventory>
+          <div style={{ position: "relative" }}>
+            <Inventory id="inventory" items={allItems["inventory"]}>
+              {allItems["inventory"].map((item, index) => (
+                <Card id={item} key={item} name={item} extraClass={recentRecipes.includes(item) ? " recent-recipe" : recentResults.includes(item) ? " recent-result" : ""} />
+              ))}
+            </Inventory>
+
+            <div className="goal">
+              <div>Goals</div>
+              <ul>
+                {goals.map(goal => (
+                  <li>
+                    <span>{goal["goal"]}</span>&nbsp;
+                    {goal["completed"] ?
+                      <span>&#10003;</span>
+                      :
+                      <span>&#10007;</span>
+                    }
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
 
       </DndContext>
