@@ -13,6 +13,14 @@ import MergeHistory from './components/MergeHistory';
 import Goals from './components/Goals';
 
 const cardsA = ["water", "fire", "air", "earth"];
+const goalsBase = [
+  { "goal": "life", "completed": false },
+  { "goal": "dragon", "completed": false },
+  { "goal": "human", "completed": false },
+  { "goal": "philosophy", "completed": false },
+  { "goal": "computer", "completed": false },
+  { "goal": "mecha", "completed": false }
+];
 
 const containers = {
   "inventory": cardsA,
@@ -25,14 +33,7 @@ function App() {
   const [draggingItem, setDraggingItem] = useState(null);
   const [allItems, setAllItems] = useState(containers);
 
-  const [goals, setGoals] = useState([
-    { "goal": "life", "completed": false },
-    { "goal": "dragon", "completed": false },
-    { "goal": "human", "completed": false },
-    { "goal": "philosophy", "completed": false },
-    { "goal": "computer", "completed": false },
-    { "goal": "mecha", "completed": false }
-  ]);
+  const [goals, setGoals] = useState(goalsBase);
 
   const [mergeHistory, setMergeHistory] = useState([]);
   const [score, setScore] = useState(0);
@@ -219,14 +220,7 @@ function App() {
     setAllItems(containers);
     setScore(0);
     setMergeHistory([]);
-    setGoals([
-      { "goal": "life", "completed": false },
-      { "goal": "dragon", "completed": false },
-      { "goal": "human", "completed": false },
-      { "goal": "philosophy", "completed": false },
-      { "goal": "computer", "completed": false },
-      { "goal": "mecha", "completed": false }
-    ]);
+    setGoals(goalsBase);
   }
 
   return (
