@@ -2,6 +2,8 @@
 
 A small drag and drop demo made into a game.
 
+![Screenshot of application](src/assets/app.png)
+
 ### To do:
 
 - mobile friendly
