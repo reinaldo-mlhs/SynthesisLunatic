@@ -68,6 +68,7 @@
     border: 2px solid #283D3B;
     border-radius: 5px;
     background-color: #FFE1C2;
+    color: black;
     font-family: inherit;
     cursor: pointer;
 }

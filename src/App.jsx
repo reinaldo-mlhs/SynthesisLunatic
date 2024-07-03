@@ -12,7 +12,7 @@ import Score from './components/Score';
 import MergeHistory from './components/MergeHistory';
 import Goals from './components/Goals';
 
-const cardsA = ["water", "fire", "air", "earth"];
+const cardsA = ["water", "fire", "wind", "earth"];
 const goalsBase = [
   { "goal": "life", "completed": false },
   { "goal": "dragon", "completed": false },

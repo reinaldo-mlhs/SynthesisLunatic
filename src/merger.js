@@ -5,13 +5,11 @@
 // dust, lava, steam, sand, stone, glass, mud
 // time, metal, life
 const combinations = [
-    {recipe: ["air", "steam"], result: ["cloud"]},
-    {recipe: ["air", "fire"], result: ["wind"]},
-    {recipe: ["air", "lava"], result: ["stone"]},
-    {recipe: ["air", "lizard"], result: ["bird"]},
+    {recipe: ["fire", "water"], result: ["cloud"]},
+    {recipe: ["wind", "lava"], result: ["stone"]},
+    {recipe: ["wind", "lizard"], result: ["bird"]},
 
-    {recipe: ["water", "fire"], result: ["steam"]},
-    {recipe: ["water", "lava"], result: ["steam", "stone"]},
+    {recipe: ["water", "lava"], result: ["stone"]},
     {recipe: ["water", "stone"], result: ["sand"]},
     {recipe: ["water", "life"], result: ["lizard", "mammal", "fish", "plant"]},
 
